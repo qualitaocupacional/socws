@@ -1,0 +1,13 @@
+*.egg*
+*.py[cod]
+__pycache__
+.python-version
+
+# build files
+/build/
+/dist/
+
+# Editors
+*.sublime*
+*.vcs
+.idea
