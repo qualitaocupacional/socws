@@ -161,8 +161,30 @@ class Employee(SOCWebService):
         )
 
 
-# class ExaminationResult(SOCWebService):
-#     WSDL_URI = 'https://ws1.soc.com.br/WSSoc/services/ResultadoExamesWs?wsdl'
+class ExaminationResult(SOCWebService):
+    WSDL_URI = 'https://ws1.soc.com.br/WSSoc/services/ResultadoExamesWs?wsdl'
+
+    def add_aso(self, params):
+        return self._default_request(
+            service_name='incluiDadosAso',
+            arg_name='aso',
+            params=params
+        )
+    
+    def test_by_employee(self, params):
+        return self._default_request(
+            service_name='resultadoExamesPorFuncionarioFicha',
+            arg_name='resultadoExame',
+            params=params
+        )
+    
+    def test_by_seq_code(self, params):
+        return self._default_request(
+            service_name='resultadoExamesPorCodigoSequencial',
+            arg_name='resultadoExame',
+            params=params
+        )
+
 
 
 class DataExport(SOCWebService):

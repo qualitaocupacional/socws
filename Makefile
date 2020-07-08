@@ -29,7 +29,7 @@ setup:
 clean: .clean-build .clean-pyc .clean-test ## remove all build, test, coverage and Python artifacts
 
 # Build
-release: .clean-build
+release: clean
 	python setup.py sdist bdist_wheel
 
 dist-test:
